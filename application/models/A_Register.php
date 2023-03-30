@@ -49,6 +49,12 @@ class A_Register extends CI_Model {
         $this->db->delete('Agency_Car_data');
     }
 
+    public function getbookingcardetails($agencyid){
+        $this->db->where('agencyid',$agencyid);
+        return $carlist=$this->db->get('Booking_details')->result();
+
+    }
+
     
 }
 

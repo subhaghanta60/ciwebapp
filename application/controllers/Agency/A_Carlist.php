@@ -117,6 +117,15 @@ class A_Carlist extends CI_Controller {
         
       }
   
+      public function viewBooking(){
+        $agencyid=$this->session->userdata('agencyid');
+      $this->load->model('A_Register');
+      $data['carlist']= $this->A_Register->getbookingcardetails($agencyid);
+     
+   
+      $this->load->view('Agency/viewbooking',$data);
+
+      }
 
     
 }
