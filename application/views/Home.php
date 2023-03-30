@@ -75,7 +75,7 @@
           <h1>Better Solutions For Your Ride</h1>
           
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="<?php echo base_url().'Customer/C_Carlist' ?>" class="btn-get-started scrollto">Book  The Car</a>
+            <a href="<?php echo base_url().'Customer/C_Carlist/AvalableCarlist' ?>" class="btn-get-started scrollto">Book  The Car</a>
         
           </div>
         </div>

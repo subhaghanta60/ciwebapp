@@ -5,13 +5,23 @@ class C_Booking extends CI_Controller {
 
     public function booking($vehicalid)
     {
+      $customerid=$this->session->userdata('customerid');
+      if($customerid){
+    
       
       $this->load->model('A_Register');
         $car=$this->A_Register->getcar($vehicalid);
       $this->load->view('Customer/Booking',['car'=>$car]);
+    } else {
+      redirect(base_url().'Customer/C_login/login');
     }
+  }
+
 
     public function booking_register($vehicalid){
+
+      $customerid=$this->session->userdata('customerid');
+      if($customerid >0){
       $this->form_validation->set_rules('vehical_model','Car Model ', 'required');
       $this->form_validation->set_rules('vehical_number','Car Number','required');
       $this->form_validation->set_rules('booking_date',' booking_date', 'required');
@@ -22,7 +32,7 @@ class C_Booking extends CI_Controller {
         $this->load->model('A_Register');
         $car=$this->A_Register->getcar($vehicalid);
 
-        $customerid=$this->session->userdata('customerid');
+        
         
           $formArray = array();
           $formArray['vehicalid'] =$vehicalid;
@@ -33,7 +43,7 @@ class C_Booking extends CI_Controller {
           $formArray['Booking_status'] = 2;
           $formArray['agencyid']=$car['agencyid'];
           $this->A_Register->update($vehicalid, $formArray);
-          $this->session->set_flashdata('success', 'Employee Details Updated Successfully');
+          $this->session->set_flashdata('success', 'Car Booking Successfully');
 
           $this->load->model('C_Register');
           $iarray =array();
@@ -50,7 +60,13 @@ class C_Booking extends CI_Controller {
 
 
           redirect(base_url().'Customer/C_Carlist/AvalableCarlist');
+      }
+      else {
+        $this->session->set_flashdata('faliure', 'Check Credenctial successfully');
 
+        redirect(base_url().'Customer/C_login/login');
+      }
+    } 
 
       }
 
@@ -62,6 +78,6 @@ class C_Booking extends CI_Controller {
       
 
     }
-}
+
 
 ?>

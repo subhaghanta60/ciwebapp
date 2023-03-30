@@ -29,6 +29,7 @@ class A_registration extends CI_Controller {
       $formArray = $this->input->post(); 
       $this->A_Register->CreateAgencydata($formArray);
       $this->session->set_flashdata('msg', 'Agancy data Successfully Created');
+      $this->session->unset_userdata('agencyid');
       redirect(base_url().'Agency/A_login/login');
     }
     else { 

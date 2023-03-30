@@ -15,7 +15,7 @@ class C_Carlist extends CI_Controller {
     }
 
     public function logout(){
-      $this->session->unset_userdata('customer_data');
+      $this->session->unset_userdata('customerid');
       redirect(base_url().'Home');
         
       }

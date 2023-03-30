@@ -26,6 +26,7 @@ class C_registration extends CI_Controller {
       $formArray = $this->input->post(); 
       $this->C_Register->CreateCustomerdata($formArray);
       $this->session->set_flashdata('msg', 'Customer  Successfully registered');
+      $this->session->unset_userdata('customerid');
       redirect(base_url().'Customer/C_login/login');
     }
     else { 

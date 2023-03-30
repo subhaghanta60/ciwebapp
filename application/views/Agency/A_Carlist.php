@@ -59,6 +59,10 @@
         <th>Vehical Number</th>
         <th>Seating Capacity</th>
         <th>Rent Per Day</th>
+        
+
+
+
         <th>Booking Status</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -76,6 +80,19 @@
         <td><?php  echo $car->vehical_number; ?></td>
         <td><?php  echo $car->setting_capacity ; ?></td>
         <td><?php  echo $car->rent_per_day ; ?></td>
+
+        <?php if($car->Booking_status === '0') :?>
+          <td> Not Available For Booking</td>
+       
+
+       <?php elseif($car->Booking_status === '1') :  ?>
+        <td>Available For Booking"</td>
+        <?php else   :?> 
+          <td> Booked By Customer </td>
+          <?php endif; ?>
+
+
+
    
        <td><?php echo $car->Booking_status ; ?></td>
     

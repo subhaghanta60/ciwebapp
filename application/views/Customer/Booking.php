@@ -75,7 +75,7 @@ $user_class =$this->session->flashdata('user_class')
 
 
 
-<?php echo form_submit(['type'=>'submit', 'class'=>'btn btn-primary','value'=>'Submit']); ?>
+
 <button type="submit" class="btn btn-primary" value="register">Rent </button>
 <a href=" <?php echo base_url().'Customer/C_Carlist/AvalableCarlist' ?> " type="submit"class="btn btn-primary">Cancel</a>
 </form>

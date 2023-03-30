@@ -112,7 +112,7 @@ class A_Carlist extends CI_Controller {
       }
 
       public function logout(){
-      $this->session->unset_userdata('agency_data');
+      $this->session->unset_userdata('agencyid');
       redirect(base_url().'Home');
         
       }
