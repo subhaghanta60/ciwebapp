@@ -17,7 +17,7 @@
   <div class="container" style="padding-top: 10px;">
     <div class ="col-md-12">
       <?php
-         $success = $this->session->userdata('success');
+         $success = $this->session->userdata('msg');
          if($success != ""){
           ?>
           
@@ -28,7 +28,7 @@
          ?>
 
       <?php
-         $failure = $this->session->userdata('failure');
+         $failure = $this->session->userdata('msgR');
          if($failure != ""){
           ?>
           

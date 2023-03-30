@@ -43,7 +43,7 @@ class C_Booking extends CI_Controller {
           $formArray['Booking_status'] = 2;
           $formArray['agencyid']=$car['agencyid'];
           $this->A_Register->update($vehicalid, $formArray);
-          $this->session->set_flashdata('success', 'Car Booking Successfully');
+          $this->session->set_flashdata('msg', 'Car Booking Successfully');
 
           $this->load->model('C_Register');
           $iarray =array();
@@ -62,7 +62,7 @@ class C_Booking extends CI_Controller {
           redirect(base_url().'Customer/C_Carlist/AvalableCarlist');
       }
       else {
-        $this->session->set_flashdata('faliure', 'Check Credenctial successfully');
+        $this->session->set_flashdata('msgR', 'Check Credenctial successfully');
 
         redirect(base_url().'Customer/C_login/login');
       }

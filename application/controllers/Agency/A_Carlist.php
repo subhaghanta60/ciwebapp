@@ -90,7 +90,7 @@ class A_Carlist extends CI_Controller {
     
   
           $this->A_Register->update($vehicalid, $formArray);
-          $this->session->set_flashdata('success', 'Employee Details Updated Successfully');
+          $this->session->set_flashdata('msg', 'Employee Details Updated Successfully');
           redirect(base_url().'Agency/A_Carlist/carlist');
         }
       
@@ -106,7 +106,7 @@ class A_Carlist extends CI_Controller {
 
       }
       $this->A_Register->delete($vehicalid);
-      $this->session->set_flashdata('success', 'Employee Details deleted successfully');
+      $this->session->set_flashdata('msg', 'Employee Details deleted successfully');
       redirect(base_url().'Agency/A_Carlist/carlist');
         
       }

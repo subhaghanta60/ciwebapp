@@ -30,7 +30,7 @@ class C_registration extends CI_Controller {
       redirect(base_url().'Customer/C_login/login');
     }
     else { 
-      $this->session->set_flashdata('msg_class','Please check all credensitial');      
+      $this->session->set_flashdata('msg','Please check all credensitial');      
       $this->load->view('Customer/C_Register');
     }
 

@@ -13,8 +13,8 @@
 <div class="container" style="margin-top: 20px ;">
 <h1>Agency Login Form</h1>
 
-<?php if($user=$this->session->flashdata('user')):
-$user_class =$this->session->flashdata('user_class')
+<?php if($user=$this->session->flashdata('msg')):
+$user_class =$this->session->flashdata('msg')
     
     ?>
     <div class="row">
