@@ -14,7 +14,7 @@
 <h1>List Your Car</h1>
 
 <?php if($user=$this->session->flashdata('msg')):
-$user_class =$this->session->flashdata('msg_class')
+$user_class =$this->session->flashdata('msg')
     
     ?>
     <div class="row">
