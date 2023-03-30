@@ -94,7 +94,7 @@
 
 
    
-       <td><?php echo $car->Booking_status ; ?></td>
+       
     
        
         <td>
